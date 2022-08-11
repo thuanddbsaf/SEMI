@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    {{ form_start(form) }}
+    <div class="form-group">
+        <label for="category">Category</label>
+        {{ form_widget(form.category,{
+            'attr':{
+                'class':'form-control'
+            }
+        }) }}
+    </div>
+    <div class="form-group">
+        <label for="category">Product Name:</label>
+        {{ form_widget(form.ProductName,{
+            'attr':{
+                'class':'form-control',
+                'placeholder': 'Product name'
+            }
+        }) }}
+    </div>
+    <div class="form-group">
+        <label for="category">Price:</label>
+        {{ form_widget(form.Price,{
+            'attr':{
+                'class':'form-control',
+                'placeholder': 'Price'
+            }
+        }) }}
+    </div>
+    <div class="form-group">
+        <label for="description">Description:</label>
+        {{ form_widget(form.Description,{
+            'attr':{
+                'class':'form-control',
+                'placeholder': 'Description'
+            }
+        }) }}
+    </div>
+
+    <div class="form-group">
+        <label for="due_date">Date</label>
+        {{ form_widget(form.Date,{
+            'attr':{
+                'class':'form-control'
+            }
+        }) }}
+    </div>
+    <div class="form-group">
+        <label for="due_date">Image</label>
+        {{ form_widget(form.productImage,{
+
+        }) }}
+    </div>
+    <input type="submit" name="create_product" value="Create" class="btn btn-primary"/>
+    {{ form_end(form) }}
+{% endblock %}
+
+
