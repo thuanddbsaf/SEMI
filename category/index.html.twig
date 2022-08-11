@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CategoryController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+    <div class="col-sm-4">
+        <div class="bs-example" data-example-id="striped-table">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Category</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for category in categories %}
+                    <tr>
+                        <th scope="row">{{ category.id }}</th>
+                        <td><a href="{{path('categoryByCat',{'id':category.id})}} ">{{ category.catname }}</a></td>
+
+                        <td>
+                            {#                        <a href="{{ path('todo_details', {'id': product.id}) }} " class='btn btn-success'>View</a>#}
+                            {#                        <a href="{{ path('todo_edit', {'id': product.id}) }}" class='btn btn-default'>Edit</a>#}
+                            {#                        <a href="{{ path('todo_delete', {'id': product.id}) }}" class='btn btn-danger'>Delete</a>#}
+                            <a href="{{path('category_details',{'id':category.id})}} " class='btn btn-success'>View</a>
+                            <a href="{{path('category_edit',{'id':category.id})}} " class='btn btn-default'>Edit</a>
+                            <a href="{{ path('category_delete', {'id': category.id}) }} "class='btn btn-danger'>Delete</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
